@@ -209,6 +209,7 @@ label {
     width: 20%;
     padding-left: 20px;
     margin-top: 6px;
+    font-size: 10px;
 }
 
 
@@ -249,8 +250,4 @@ label {
 
 .hide {
     display: none;
-}
-
-.main {
-    width: 100%;
 }
