@@ -29,8 +29,8 @@
         </nav>
         <br>
         <div class="fbdiv">
-            <button class="fb cur" onclick="data1()">Ginning Forward</button>
-            <button class="fb" onclick="data2()">Ginning Reverse</button>
+            <button class="fb cur" onclick="data1()">Oil Mill Forward</button>
+            <button class="fb" onclick="data2()">Oil Mill Reverse</button>
         </div>
 
     </header>
@@ -40,10 +40,10 @@
             <form action="action_page.php">
                 <div class="row">
                     <div class="col-40">
-                        <label for="kapas1">Kapas</label>
+                        <label for="cottonseed1">Cotton Seed</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="kapas1" name="kapas1" value="0">
+                        <input type="number" id="cottonseed1" name="cottonseed1" value="0">
                     </div>
                     <div class="col-20">
                         <label>Rs./Quintal</label>
@@ -62,32 +62,21 @@
                 </div>
                 <div class="row">
                     <div class="col-40">
-                        <label for="cottonseed1">Cotton Seed</label>
+                        <label for="oilrate">Oil Rate</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="cottonseed1" name="cottonseed1" value="0">
+                        <input type="number" id="oilrate" name="oilrate" value="0">
                     </div>
                     <div class="col-20">
-                        <label>Rs./Quintal</label>
+                        <label>Rs./10 Kgs</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-40">
-                        <label for="outturn1">Out Turn</label>
+                        <label for="oil">Oil</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="outturn1" name="outturn1" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>%</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="shortage1">Shortage</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="shortage1" name="shortage1" value="0">
+                        <input type="number" id="oil" name="oil" value="0">
                     </div>
                     <div class="col-20">
                         <label>%</label>
@@ -95,13 +84,35 @@
                 </div>
                 <div class="row">
                     <div class="col-40">
-                        <label for="cost1"><b>Cost of Cotton</b></label>
+                        <label for="oilcake">Oil Cake</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" id="oilcake" name="oilcake" value="0">
+                    </div>
+                    <div class="col-20">
+                        <label>%</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="pakingsize1">Paking Size</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" id="pakingsize1" name="pakingsize1" value="0">
+                    </div>
+                    <div class="col-20">
+                        <label>Kgs.</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="cost1"><b>Oil Cake Cost</b></label>
                     </div>
                     <div class="col-75">
                         <label id="cost1" for="cost1"><b>0</b></label>
                     </div>
                     <div class="col-20">
-                        <label>Rs./Candy</label>
+                        <label>Rs./Bag</label>
                     </div>
                 </div>
             </form>
@@ -110,13 +121,13 @@
             <form action="action_page.php">
                 <div class="row">
                     <div class="col-40">
-                        <label for="cost2">Cotton Rate</label>
+                        <label for="cost2">Oil Cake Cost</label>
                     </div>
                     <div class="col-75">
                         <input type="number" id="cost2" name="cost2" value="0">
                     </div>
                     <div class="col-20">
-                        <label>Rs./Candy</label>
+                        <label>Rs./Bag</label>
                     </div>
                 </div>
                 <div class="row">
@@ -132,32 +143,21 @@
                 </div>
                 <div class="row">
                     <div class="col-40">
-                        <label for="cottonseed2">Cotton Seed</label>
+                        <label for="oilrate">Oil Rate</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="cottonseed2" name="cottonseed2" value="0">
+                        <input type="number" id="oilrate" name="oilrate" value="0">
                     </div>
                     <div class="col-20">
-                        <label>Rs./Quintal</label>
+                        <label>Rs./10 Kgs</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-40">
-                        <label for="outturn2">Out Turn</label>
+                        <label for="oil">Oil</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="outturn2" name="outturn2" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>%</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="shortage2">Shortage</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="shortage2" name="shortage2" value="0">
+                        <input type="number" id="oil" name="oil" value="0">
                     </div>
                     <div class="col-20">
                         <label>%</label>
@@ -165,10 +165,33 @@
                 </div>
                 <div class="row">
                     <div class="col-40">
-                        <label for="kapas2"><b>Kapas</b></label>
+                        <label for="oilcake">Oil Cake</label>
                     </div>
                     <div class="col-75">
-                        <label id="kapas2" for="kapas2"><b>0</b></label>
+                        <input type="number" id="oilcake" name="oilcake" value="0">
+                    </div>
+                    <div class="col-20">
+                        <label>%</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="pakingsize2">Paking Size</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" id="pakingsize2" name="pakingsize2" value="0">
+                    </div>
+                    <div class="col-20">
+                        <label>Kgs.</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-40">
+                        <label for="cottonseed2"><b>Cotton Seed</b></label>
+                    </div>
+                    <div class="col-75">
+                        <label id="cottonseed2"><b>0</b></label>
                     </div>
                     <div class="col-20">
                         <label>Rs./Quintal</label>
