@@ -16,7 +16,7 @@
         <!-- Logo -->
         <a href="#" class="logo">PB</a>
         <!-- Hamburger icon -->
-        <input class="side-menu" type="checkbox" id="side-menu" />
+        <input class="side-menu" type="checkbox" id="side-menu" onclick="export3()" />
         <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
         <!-- Menu -->
         <nav class="nav">
@@ -29,8 +29,8 @@
         </nav>
         <br>
         <div class="fbdiv">
-            <button class="fb cur" onclick="data1()">Ginning Forward</button>
-            <button class="fb" onclick="data2()">Ginning Reverse</button>
+            <button class="fb cur" onclick="data1()">Export Forward</button>
+            <button class="fb" onclick="data2()">Export Reverse</button>
         </div>
 
     </header>
@@ -40,13 +40,13 @@
             <form action="action_page.php">
                 <div class="row">
                     <div class="col-40">
-                        <label for="cottonrate">Kapas</label>
+                        <label for="cottonrate1">Cotton Rate</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="kapas1" name="kapas1" value="0">
+                        <input oninput="export3()" type="number" id="cottonrate1" name="cottonrate1" value="0">
                     </div>
                     <div class="col-20">
-                        <label>Rs./Quintal</label>
+                        <label>Rs./Candy</label>
                     </div>
                 </div>
                 <div class="row">
@@ -54,54 +54,43 @@
                         <label for="expenses1">Expenses</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="expenses1" name="expenses1" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>Rs./Quintal</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="cottonseed1">Cotton Seed</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="cottonseed1" name="cottonseed1" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>Rs./Quintal</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="outturn1">Out Turn</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="outturn1" name="outturn1" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>%</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="shortage1">Shortage</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="shortage1" name="shortage1" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>%</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="cost1"><b>Cost of Cotton</b></label>
-                    </div>
-                    <div class="col-75">
-                        <label id="cost1" for="cost1"><b>0</b></label>
+                        <input oninput="export3()" type="number" id="expenses1" name="expenses1" value="0">
                     </div>
                     <div class="col-20">
                         <label>Rs./Candy</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="exchangerate1">Exchange Rate</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="export3()" type="number" id="exchangerate1" name="exchangerate1" value="0">
+                    </div>
+                    <div class="col-20">
+                        <label>USD/INR</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="cents"><b>Export Rate</b></label>
+                    </div>
+                    <div class="col-75">
+                        <label id="cents" for="cents"><b>0</b></label>
+                    </div>
+                    <div class="col-20">
+                        <label>Cents/LB</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="usd"><b>Export Rate</b></label>
+                    </div>
+                    <div class="col-75">
+                        <label id="usd" for="usd"><b>0</b></label>
+                    </div>
+                    <div class="col-20">
+                        <label>Cents/LB</label>
                     </div>
                 </div>
             </form>
@@ -110,13 +99,28 @@
             <form action="action_page.php">
                 <div class="row">
                     <div class="col-40">
-                        <label for="cost2">Cotton Rate</label>
+                        <label id="lable" for="cent">Cents/LB</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="cost2" name="cost2" value="0">
+                        <!-- <input type="number" id="exportrate2" name="exportrate2" value="0"> -->
+                    </div>
+                    <div class="col-20" id="switch">
+                        <label class="switch" onclick="export1()">
+                            <input name="cent" id="cent" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="exportrate2">Export Rate</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="export4()" type="number" id="exportrate2" name="exportrate2" value="0">
                     </div>
                     <div class="col-20">
-                        <label>Rs./Candy</label>
+                        <label id="lable2">Cents/LB</label>
                     </div>
                 </div>
                 <div class="row">
@@ -124,54 +128,32 @@
                         <label for="expenses2">Expenses</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="expenses2" name="expenses2" value="0">
+                        <input oninput="export4()" type="number" id="expenses2" name="expenses2" value="0">
                     </div>
                     <div class="col-20">
-                        <label>Rs./Quintal</label>
+                        <label>Rs./Candy</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-40">
-                        <label for="cottonseed2">Cotton Seed</label>
+                        <label for="exchangerate2">Exchange Rate</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="cottonseed2" name="cottonseed2" value="0">
+                        <input oninput="export4()" type="number" id="exchangerate2" name="exchangerate2" value="0">
                     </div>
                     <div class="col-20">
-                        <label>Rs./Quintal</label>
+                        <label>USD/INR</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-40">
-                        <label for="outturn2">Out Turn</label>
+                        <label for="realisation"><b>Realisation</b></label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="outturn2" name="outturn2" value="0">
+                        <label id="realisation" for="realisation"><b>0</b></label>
                     </div>
                     <div class="col-20">
-                        <label>%</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="shortage2">Shortage</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="shortage2" name="shortage2" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>%</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="kapas2"><b>Kapas</b></label>
-                    </div>
-                    <div class="col-75">
-                        <label id="kapas2" for="kapas2"><b>0</b></label>
-                    </div>
-                    <div class="col-20">
-                        <label>Rs./Quintal</label>
+                        <label>Cents/LB</label>
                     </div>
                 </div>
             </form>
