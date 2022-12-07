@@ -37,7 +37,7 @@ ul {
     box-shadow: 1px 1px 5px 0px var(--gray);
     position: sticky;
     top: 0;
-    width: 100vw;
+    width: 100%;
 }
 
 /* Logo */
@@ -50,8 +50,8 @@ ul {
 
 /* Nav menu */
 .nav {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: fixed;
     background-color: var(--black);
     overflow: hidden;
@@ -98,10 +98,10 @@ ul {
     background: var(--white);
     content: '';
     display: block;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     transition: all .2s ease-out;
-    width: 100vw;
+    width: 100%;
 }
 
 .hamb-line::before {
@@ -119,7 +119,7 @@ ul {
 /* Hide checkbox */
 /* Toggle menu icon */
 .side-menu:checked~nav {
-    max-height: 100vh;
+    max-height: 100%;
 }
 
 .side-menu:checked~.hamb .hamb-line {
@@ -167,7 +167,7 @@ ul {
 input[type=number],
 select,
 textarea {
-    width: 100vw;
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -189,24 +189,24 @@ label {
     padding: 20px;
 }
 
-/* Floating column for labels: 25vw width */
+/* Floating column for labels: 25% width */
 .col-40 {
     float: left;
-    width: 40vw;
+    width: 40%;
     margin-top: 6px;
 }
 
-/* Floating column for inputs: 75vw width */
+/* Floating column for inputs: 75% width */
 .col-75 {
     float: left;
-    width: 40vw;
+    width: 40%;
     margin-top: 6px;
 }
 
-/* Floating column for inputs: 75vw width */
+/* Floating column for inputs: 75% width */
 .col-20 {
     float: left;
-    width: 20vw;
+    width: 20%;
     padding-left: 20px;
     margin-top: 6px;
 }
@@ -225,7 +225,7 @@ label {
     .col-25,
     .col-75,
     input[type=submit] {
-        width: 100vw;
+        width: 100%;
         margin-top: 0;
     }
 } */
@@ -236,7 +236,7 @@ label {
 
 .fb {
     margin: 0px;
-    width: 49.4vw;
+    width: 49.4%;
     border: none;
     background-color: var(--black);
     color: var(--white);
