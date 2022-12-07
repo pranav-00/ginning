@@ -250,3 +250,7 @@ label {
 .hide {
     display: none;
 }
+
+.main {
+    width: 100%;
+}
