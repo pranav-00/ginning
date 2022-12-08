@@ -196,10 +196,28 @@ label {
     margin-top: 6px;
 }
 
+.col-50 {
+    float: left;
+    width: 55%;
+    margin-top: 6px;
+}
+
 /* Floating column for inputs: 75% width */
 .col-75 {
     float: left;
     width: 35%;
+    margin-top: 6px;
+}
+
+.col-60 {
+    float: left;
+    width: 65%;
+    margin-top: 6px;
+}
+
+.col-65 {
+    float: right;
+    width: 45%;
     margin-top: 6px;
 }
 
@@ -233,6 +251,7 @@ label {
 .fbdiv {
     margin: 0px;
     padding: 0px;
+    width: 100%;
 }
 
 .fb {
@@ -279,6 +298,7 @@ label {
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
+    z-index: -1;
 }
 
 .slider:before {

@@ -27,151 +27,79 @@
                 <li><a href="conv.html">Conversion</a></li>
             </ul>
         </nav>
-        <br>
-        <div class="fbdiv">
-            <button class="fb cur" onclick="data1()">Ginning Forward</button>
-            <button class="fb" onclick="data2()">Ginning Reverse</button>
-        </div>
-
     </header>
     <!-- Main content -->
     <div class="main">
-        <div class="container" id="1">
+        <div class="container">
             <form action="action_page.php">
                 <div class="row">
-                    <div class="col-40">
-                        <label for="kapas1">Kapas</label>
+                    <div class="col-60">
+                        <label id="lable" for="cent">Cents/LB to Indian Rate</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" id="kapas1" name="kapas1" value="0">
+                        <!-- <input type="number" id="exportrate2" name="exportrate2"  > -->
                     </div>
-                    <div class="col-20">
-                        <label>Rs./Quintal</label>
+                    <div class="col-20" id="switch">
+                        <label class="switch" onclick="">
+                            <input oninput="conv1()" name="cent" id="cent" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-50">
+                        <label id="lable11" for="lable12">US Cents/LB</label>
+                    </div>
+                    <div class="col-65">
+                        <input oninput="conv1()" type="number" id="lable12" name="lable12">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-40">
-                        <label for="expenses1">Expenses</label>
+                    <div class="col-50">
+                        <label id="lable21" for="lable22">Exchange Rate (USD/INR)</label>
                     </div>
-                    <div class="col-75">
-                        <input type="number" id="expenses1" name="expenses1" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>Rs./Quintal</label>
+                    <div class="col-65">
+                        <input oninput="conv1()" type="number" id="lable22" name="lable22">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-40">
-                        <label for="cottonseed1">Cotton Seed</label>
+                    <div class="col-50">
+                        <label id="lable31" for="lable32">INR/Candy</label>
                     </div>
-                    <div class="col-75">
-                        <input type="number" id="cottonseed1" name="cottonseed1" value="0">
+                    <div class="col-65">
+                        <input oninput="conv1()" type="number" id="lable32" name="lable32" disabled>
                     </div>
-                    <div class="col-20">
-                        <label>Rs./Quintal</label>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-70">
+                        <input oninput="conv1()" type="radio" id="1" name="11" value="1" checked>
+                        <label for="1" id="lable33">Cents/LB To Indian Rate</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-40">
-                        <label for="outturn1">Out Turn</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="outturn1" name="outturn1" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>%</label>
+                    <div class="col-70">
+                        <input oninput="conv1()" type="radio" id="2" name="11" value="2">
+                        <label for="2" id="lable33">Chinese Rate To Indian Rate</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-40">
-                        <label for="shortage1">Shortage</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="shortage1" name="shortage1" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>%</label>
+                    <div class="col-70">
+                        <input oninput="conv1()" type="radio" id="3" name="11" value="3">
+                        <label for="3" id="lable33">Pakistan Rate To Indian Rate</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-40">
-                        <label for="cost1"><b>Cost of Cotton</b></label>
-                    </div>
-                    <div class="col-75">
-                        <label id="cost1" for="cost1"><b>0</b></label>
-                    </div>
-                    <div class="col-20">
-                        <label>Rs./Candy</label>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="container hide" id="2">
-            <form action="action_page.php">
-                <div class="row">
-                    <div class="col-40">
-                        <label for="cost2">Cotton Rate</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="cost2" name="cost2" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>Rs./Candy</label>
+                    <div class="col-70">
+                        <input oninput="conv1()" type="radio" id="4" name="11" value="4">
+                        <label for="4" id="lable33">Punjab Rate To Indian Rate</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-40">
-                        <label for="expenses2">Expenses</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="expenses2" name="expenses2" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>Rs./Quintal</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="cottonseed2">Cotton Seed</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="cottonseed2" name="cottonseed2" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>Rs./Quintal</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="outturn2">Out Turn</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="outturn2" name="outturn2" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>%</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="shortage2">Shortage</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="shortage2" name="shortage2" value="0">
-                    </div>
-                    <div class="col-20">
-                        <label>%</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-40">
-                        <label for="kapas2"><b>Kapas</b></label>
-                    </div>
-                    <div class="col-75">
-                        <label id="kapas2" for="kapas2"><b>0</b></label>
-                    </div>
-                    <div class="col-20">
-                        <label>Rs./Quintal</label>
+                    <div class="col-70">
+                        <input oninput="conv1()" type="radio" id="5" name="11" value="5">
+                        <label for="5" id="lable33">170 Kgs Rate To Indian Rate</label>
                     </div>
                 </div>
             </form>
