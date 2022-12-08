@@ -1,37 +1,35 @@
-let slides = Array.from(document.querySelectorAll('.container'))
+let slide = document.getElementById('body')
+
+// set up our state
 let isDragging = false,
     startPos = 0,
     currentTranslate = 0,
     prevTranslate = 0,
     animationID,
     currentIndex = 0
-slides.forEach((slide, index) => {
-    // touch events
-    slide.addEventListener('touchstart', touchStart(index))
-    slide.addEventListener('touchend', touchEnd)
-    // mouse events
-    slide.addEventListener('mousedown', touchStart(index))
-    slide.addEventListener('mouseup', touchEnd)
-    slide.addEventListener('mouseleave', touchEnd)
-})
 
-
-// prevent menu popup on long press
-window.oncontextmenu = function (event) {
-    event.preventDefault()
-    event.stopPropagation()
-    return false
-}
+// add our event listeners
+// slides.forEach((slide, index) => {
+// touch events
+slide.addEventListener('touchstart', touchStart())
+slide.addEventListener('touchend', touchEnd)
+slide.addEventListener('touchmove', touchMove)
+// mouse events
+slide.addEventListener('mousedown', touchStart())
+slide.addEventListener('mouseup', touchEnd)
+slide.addEventListener('mousemove', touchMove)
+slide.addEventListener('mouseleave', touchEnd)
+// })
 
 function getPositionX(event) {
     return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
 }
 
 // use a HOF so we have index in a closure
-function touchStart(index) {
+function touchStart() {
     return function (event) {
-        currentIndex = index
         startPos = getPositionX(event)
+        isDragging = true
     }
 }
 
@@ -42,14 +40,15 @@ function touchMove(event) {
     }
 }
 
-function touchEnd(event) {
-    let end = getPositionX(event)
-    const movedBy = end - startPos
+function touchEnd() {
+    isDragging = false
+    const movedBy = currentTranslate - prevTranslate
 
     // if moved enough negative then snap to next slide if there is one
-    if (movedBy < -100) data1()
+    if (movedBy < -100) data2()
 
     // if moved enough positive then snap to previous slide if there is one
-    if (movedBy > 100) data2()
+    if (movedBy > 100) data1()
 
 }
+
